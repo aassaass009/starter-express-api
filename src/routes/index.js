@@ -1,0 +1,26 @@
+const cart_items_router = require('./api/cart_items')
+const wish_items_router = require('./api/wish_items')
+const order_items_router = require('./api/order_items')
+const product_router = require('./api/product')
+const product_category_router = require('./api/product_category')
+const UserRoute = require('./api/UserRouter')
+const AdminRoute = require('./api/AdminRouter')
+const SliderRoute = require('./api/slider_route')
+const ImageRoute = require('./api/image_route')
+const FeaturedBrandsRoute = require('./api/featured_brands_route')
+const { Router } = require('express')
+
+const router = Router()
+
+router.use('/featured_brands', FeaturedBrandsRoute)
+router.use('/slider', SliderRoute)
+router.use('/image', ImageRoute)
+router.use('/wish_items', wish_items_router)
+router.use('/cart_items', cart_items_router)
+router.use('/order_items', order_items_router)
+router.use('/product', product_router)
+router.use('/product_category', product_category_router)
+router.use('/user', UserRoute)
+router.use('/admin', AdminRoute)
+
+module.exports = router
